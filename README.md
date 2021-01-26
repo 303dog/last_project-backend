@@ -1,8 +1,5 @@
 # README
 
-
-
-
 api= SuperHero API (https://superheroapi.com/?ref=public-apis)
 
 api-key= 10219336580312946 

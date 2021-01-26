@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#User.create(name: "Mo", username: "TestUser1", password: "password")
+require "httparty"
+response = HTTParty.get("https://akabab.github.io/superhero-api/api/all.json")
+print response[0]
+response.each do |hero|
+Hero.create(hero_id: hero[id], name: hero["biography"]["fullName"], aka: hero["biography"]["aliases"], alignment: hero["biography"]["alignment"], smarts: hero["powerstats"]["intelligence"],
+muscle: hero["powerstats"]["strength"], speed: hero["powerstats"]["speed"], stamina: hero["powerstats"]["durability"], power: hero["powerstats"]["power"], combat_skills: hero["powerstats"]["combat"], appearance: hero["appearance"]["gender"], work: hero["work"]["occupation"], connections: hero["connections"]["groupAffiliation"], family: hero["connections"]["relatives"], xsImg: hero["images"]["xs"], smImg: hero["images"]["sm"], mdImg: hero["images"]["md"], lgImg: hero["images"]["lg"])
+
+end
