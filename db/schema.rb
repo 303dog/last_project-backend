@@ -10,6 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_01_24_192316) do
+
+  create_table "heros", force: :cascade do |t|
+    t.integer "hero_id"
+    t.string "name"
+    t.string "aka"
+    t.string "alignment"
+    t.integer "smarts"
+    t.integer "muscle"
+    t.integer "speed"
+    t.integer "stamina"
+    t.integer "power"
+    t.integer "combat_skills"
+    t.string "appearance"
+    t.string "work"
+    t.string "connections"
+    t.string "family"
+    t.string "xsImg"
+    t.string "smImg"
+    t.string "mdImg"
+    t.string "lgImg"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
